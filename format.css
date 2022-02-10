@@ -95,7 +95,7 @@ img.homeButton:hover {
 	background: radial-gradient(var(--primaryHeavy) 30%, var(--primary) 70%);
 }
 .dropdownButton {
-  flex: 9;
+
   height: 100%;
 }
 /*********************************************X Button*/
