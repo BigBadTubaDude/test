@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Candal&family=Cantata+One&display=swap');
+
+* {
+	padding: 0;
+	margin: 0;
+}
+:root {
+	--background: rgb(240,240,240);
+	--backgroundTrans: rgba(239,239,239, 0.69);	
+	--backgroundMoreTrans: rgba(239,239,239, 0.55);
+	--backgroundLessTrans: rgba(239,239,239, 0.75);
+	--primary: rgb(0,0,125);
+	--primaryLight: rgb(100,100,235);
+	--primaryLightish: rgb(75,75,210);
+	--primaryHeavy: rgb(0,0,125);
+	--primaryHeavier: rgb(0,0,105);
+	--primaryTrans: rgba(0,0,135,0.9);
+	--primaryTransHeavy: rgba(0,0,125, 0.9);
+	--secondary: rgb(180, 6, 3);
+	--secondaryLight: rgb(195, 21, 18);
+	--secondaryLighter: rgb(210,36,33);
+	--secondaryHeavy: rgb(165,0,0);
+}
+body {
+	position: relative;
+	height: 100vh;
+}
+html , body {
+	background-color: var(--background);
+}
+/*Banner*/
+div.top {
+	background: linear-gradient(var(--background) 30%, var(--primary) 144%);
+	position: absolute;
+	bottom: 100%;
+	height: 10vh;
+	width: 100vw;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	align-items: stretch;
+}
+img.logo {
+	align-self: center;
+}
+.bannerText1,.bannerText2 {
+	font-family: 'Cantata One', sans-serif;
+}
+.bannerText1 {
+	grid-column: 3 /10;
+	font-size: clamp(4vh, 2.8rem, 4rem);
+	justify-self: center;
+	position: relative;
+	top: -2%;
+
+}
+.bannerText2 {
+	grid-column: 10 / 13;
+	top: 18%;
+	position: relative;
+	font-size: 1.4rem;
+}
+/***************************************Navagation Bar*/
+nav {
+	position: sticky;
+	top: 0;
+	margin-top: 10vh;
+	height: 10rem;
+	background-color: var(--primary);
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+
+	}
+/*******************************************Home Button*/
+img.homeButton {
+	height: 6rem;
+	background: radial-gradient(var(--primaryLight) 35%, var(--primary) 70%);
+}
+img.homeButton:hover {
+		background: radial-gradient(var(--primaryLight) 45%, var(--primary) 75%);
+}
+/*******************************************X Button*/
+.navMenuButton:hover {
+	background: radial-gradient(var(--primaryLight) 30%, var(--primary) 70%);
+}
+.navMenuButton {
+	min-width: 0;
+	background: radial-gradient(var(--primaryLightish) 30%, var(--primary) 70%);
+	height: 10rem;
+}
+.navMenuButton:active {
+	background-color: var(--primaryHeavier);
+	background: radial-gradient(var(--primaryHeavy) 30%, var(--primary) 70%);
+}
+.dropdownButton {
+  flex: 9;
+  height: 100%;
+}
+/*********************************************X Button*/
+.xButtonImg {
+	flex: 6;
+	height: 4rem;
+}
+a.xButton {
+	visibility: hidden;
+	background: radial-gradient(var(--primaryLight) 35%, var(--primary) 70%);
+}
+a.xButton:hover {
+	background: radial-gradient(var(--primaryLight) 45%, var(--primary) 75%);
+}
+a.xButton:active {
+	background: radial-gradient(var(--primaryHeavy) 30%, var(--primary) 70%);
+}
+input.navToggle:checked ~ a.xButton, input.info:checked ~ a.xButton, input.media:checked ~ a.xButton, input.contact:checked ~ a.xButton {
+	visibility: visible;
+}
+/***************************************Main popup menu*/
+ul.dropdown-content { /*popup menu*/
+	position: absolute;
+	bottom: 100%;
+	z-index: 3;
+	width: 100vw;
+	display: grid;
+	grid-column-gap:0;
+	height: 10vh;
+	background: linear-gradient(var(--backgroundMoreTrans) 6%, var(--primary) 103%);
+	grid-template-columns: 1fr 1fr 1fr; 
+	min-width: 160px;
+	visibility: hidden;
+}
+.navToggle:checked ~ .dropdown-content{
+	visibility: visible;
+	top: default;
+} 
+
+/********************************************Main popup items*/
+ul.dropdown-content label li {  /* popup items*/
+	height: 100%;
+	font-size: 1rem;
+	list-style-type: none; 
+	background-color:var(--background);
+	background: linear-gradient(var(--backgroundTrans) 6%, var(--primary) 103%);
+	text-align: center;
+	display: grid;
+	grid-auto-flow: column;
+	justify-content: center;
+	align-content: center;
+}
+ul.dropdown-content label li button {  /*popup menu buttons*/
+	text-decoration: none;
+	list-style-type: none;
+	color: black;
+	font-size: 2rem;
+	border: 4px solid black;
+	border-radius: 7px;
+	padding: 1rem;
+	padding-left: 2rem;
+	padding-right: 2rem;
+	background-color: var(--background);
+	background: linear-gradient(var(--backgroundLessTrans) 31%, var(--primary) 133%);
+}
+.navLinks:hover{
+	background: linear-gradient(var(--background) 40%, var(--primary) 140%);
+}
+input.info:checked ~ ul label li button.infoButton{
+	background: linear-gradient(var(--backgroundLessTrans) 50%, var(--secondaryHeavy) 151%);
+}
+input.info:checked:hover ~ ul label li button.infoButton{
+	background: linear-gradient(var(--backgroundLessTrans) 40%, var(--secondaryHeavy) 140%);
+}
+input.media:checked ~ ul label li button.mediaButton{
+	background: linear-gradient(var(--backgroundLessTrans) 50%, var(--secondaryHeavy) 151%);
+}
+input.media:checked:hover ~ ul label li button.mediaButton{
+	background: linear-gradient(var(--backgroundLessTrans) 40%, var(--secondaryHeavy) 140%);
+}
+input.contact:checked ~ ul label li button.contactButton{
+	background: linear-gradient(var(--backgroundLessTrans) 50%, var(--secondaryHeavy) 151%);
+}
+input.contact:checked:hover ~ ul label li button.contactButton{
+	background: linear-gradient(var(--backgroundLessTrans) 40%, var(--secondaryHeavy) 140%);
+}
+/*************************Sub popup menu items*/
+.subItemContainer {
+	position: absolute;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	width: 100vw;
+	height: 7vh;
+	grid-column-gap: 0;
+	top: 99.3%;
+	min-width: 160px;
+	visibility: hidden;
+}
+ul.subItemContainer2 {
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 0;
+}
+.subItemContainer li {
+	height: 100%;
+	font-size: 1rem;
+	list-style-type: none;
+	background-color:var(--background);
+	background: linear-gradient(var(--primary) 8%, var(--backgroundTrans) 82%);
+	display: grid;
+	grid-column-gap: 0;
+	justify-content: center;
+	align-content: center;
+}
+.subItemContainer li a {
+	text-decoration: none;
+	list-style-type: none;
+	color: black;
+	font-size: 2rem;
+	border: 4px solid black;
+	border-radius: 7px;
+	padding: 1rem;
+	padding-left: 2rem;
+	padding-right: 2rem;
+	background-color: var(--background);
+	background: linear-gradient(var(--primary) -31%, var(--backgroundTrans)  55%);
+}
+a.subNavLinks:hover{
+	background: linear-gradient(var(--primary) -40%, var(--backgroundTrans) 45%);
+}
+.navLinks img {
+	z-index: 1000;
+	position: absolute;
+	top:0;
+	bottom:0;
+}
+
+/********************************Donate and Volunteer button*/
+.donate {
+	margin: 1.5rem 2rem 1.5rem 0;
+	height: 64%;
+	background-color: var(--secondary);
+	border-radius: 7px;
+	box-shadow: 0.9px 0.9px 5px;
+	text-align: center;
+	border: 2px solid black;
+	display: flex;
+	flex: 2;
+}
+.donate a {
+	text-decoration: none;
+	justify-content: center;
+	vertical-align: middle;
+	margin: auto;
+	color: rgb(220,220,220);
+	font-size: 2.3rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	font-family: 'Cantata One', sans-serif;
+}
+.donate:hover {
+	background-color: var(--secondaryLight);
+}
+.donate:active {
+	background-color: var(--secondaryHeavy);
+}
+#howToVote a {
+	font-size: 2rem;
+}
+/************************************nav middle*/
+.blueSpace {
+	flex : 44;
+	visibility: hidden;
+}
+/*************************************************************button effects*/
+
+/***************************Main nav button code*/
+
+
+input:hover + ul {
+	visibility: visible;
+}
+
+.navToggle:checked ~ .dropdownButton > label > img{
+		background: radial-gradient(var(--secondaryHeavy) 27%, var(--primary) 70%);
+}
+ul.dropdown-content:hover {
+	visibility: visible;
+}
+/*****************************donate effects*/
+
+
+/*********************************input misc*/
+input[type="radio"] {
+	display: none;
+}
+label.info {
+	visibility: hidden;
+}
+
+.navToggle {
+	display:none;
+} 
+input.info:checked ~ .infoDropdown {
+	visibility: visible;
+} 
+input.media:checked ~ .mediaDropdown {
+	visibility: visible;
+} 
+input.contact:checked ~ .contactDropdown {
+	visibility: visible;
+} 
+input.info:checked ~ ul.dropdown-content {
+	visibility: visible;
+}
+input.media:checked ~ ul.dropdown-content {
+	visibility: visible;
+}
+input.contact:checked ~ ul.dropdown-content {
+	visibility: visible;
+}
+lbarnes@tctc.edu
+

@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link href="remedy.css" rel="stylesheet" />
+	<link href="format.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="top">
+		<img class="logo" src="bernie-logo.png"></img>
+		<h1 class="bannerText1">Dr. Gary Lee Burgess</h1>
+		<h2 class="bannerText2">for South Carolina Superintendent</h2>
+	</div>
+
+
+	<nav>
+		
+		<input type="radio" class="info" id="info" name="sub" value="info">		<!-- invisible radio buttons to toggle on sub menu items-->
+		<input type="radio" class="media" id="media" name="sub" value="media">
+		<input type="radio" class="contact"id="contact" name="sub" value="contact">
+		<input type="checkbox" id="navToggle" class="navToggle">  <!--invisible checkbox to toggle main dropdown button*/-->
+		<ul class="dropdown-content">
+			<label  for="info" >
+				<li ><button class="infoButton navLinks" onclick="check()">Info</button></li>
+			</label>
+			<label class="media" for="media">
+				<li ><button class="mediaButton navLinks" onclick="mcheck()">Media</a></li>
+			</label>
+			<label class="contact" for="contact">
+				<li ><button class="contactButton navLinks" onclick="ccheck()">Contact</a></li>
+			</label>
+		</ul>
+
+		<!-- submenus -->
+		<ul class="infoDropdown subItemContainer">
+			<li><a class="subNavLinks" href="#">About</a></li>
+			<li><a class="subNavLinks" href="#">Issues</a></li>
+			<li><a class="subNavLinks" href="#">Events</a></li>
+		</ul>	
+		<ul class="mediaDropdown subItemContainer subItemContainer2">
+			<li><a class="subNavLinks" href="#">Endorsements</a></li>
+			<li><a class="subNavLinks" href="#">Press/Media Releases</a></li>
+		</ul>
+		<ul class="contactDropdown subItemContainer subItemContainer2">
+			<li><a class="subNavLinks" href="#">Social Media</a></li>
+			<li><a class="subNavLinks" href="#">Contact Page</a></li>
+		</ul>
+		<div class="dropdownButton">
+			<label for="navToggle" class="navToggle-lable">
+				<img class="navMenuButton" src="menu2.png" ></img> <!--3 bar button-->
+			</label>
+		</div>
+		<a class="xButton" onclick="uncheckAll()">
+			<img class=" xButtonImg" src="x.png">  </img>
+		</a>
+		<img class="blueSpace" src="#"></img>
+		<div onclick="location.href='actblue.com';" style="cursor: pointer;"  id ="howToVote" class="donate"> <!-- don't forget to change both urls-->
+			<a href="actblue.com">Vote!</a>
+		</div>
+		<div onclick="location.href='actblue.com';" style="cursor: pointer;"  class="donate volunteer"> <!-- don't forget to change both urls-->
+			<a href="actblue.com">Volunteer</a>
+		</div>
+		<div onclick="location.href='actblue.com';" style="cursor: pointer;"  class="donate"> <!-- don't forget to change both urls-->
+			<a href="actblue.com">Donate</a>
+		</div>
+		
+	</nav>
+
+	<div class = "content">
+		
+		
+	</div>
+	<script>
+		function check() {
+			document.getElementById("info").checked = true;
+	}
+		function mcheck() {
+			document.getElementById("media").checked = true;
+	}
+		function ccheck() {
+			document.getElementById("contact").checked = true;
+	}
+		function uncheck() {
+			document.getElementById("info").checked = false;
+	}
+		function unmcheck() {
+			document.getElementById("media").checked = false;
+	}
+		function unccheck() {
+			document.getElementById("contact").checked = false;
+	}
+		function uncheckAll() {
+			document.getElementById("navToggle").checked = false;
+			document.getElementById("info").checked = false;
+			document.getElementById("media").checked = false;		
+			document.getElementById("contact").checked = false;			
+	}
+	
+	</script>
+</body>
+</html>
